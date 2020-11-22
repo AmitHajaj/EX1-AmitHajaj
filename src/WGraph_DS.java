@@ -79,17 +79,14 @@ public class WGraph_DS implements weighted_graph, Serializable {
 
     @Override
     public void connect(int node1, int node2, double w) {
-       if(node1 != node2 && w >= 0) {
-           if (this.map.containsKey(node1) && this.map.containsKey(node2)) {
+       if(this.map.containsKey(node1) && this.map.containsKey(node2)) {
+           if (node1 != node2 && w >= 0) {
                //If this edge already exists, we don't touch edge size.
                if(!this.hasEdge(node1, node2)) {
                    numOfEdges++;
                }
                this.map.get(node1).put(node2, w);
                this.map.get(node2).put(node1, w);
-
-//               NodeInfo temp1 = (NodeInfo) this.nodes.get(node1);
-//               NodeInfo temp2 = (NodeInfo) this.nodes.get(node2);
 
                ((NodeInfo) this.nodes.get(node1)).addNi((NodeInfo) this.nodes.get(node2));
                ((NodeInfo) this.nodes.get(node2)).addNi((NodeInfo) this.nodes.get(node1));
