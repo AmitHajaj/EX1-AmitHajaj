@@ -163,15 +163,30 @@ public class WGraph_Algo_Test {
             g.addNode(i);
         }
 
-        int[] nodes = WGraph_DS_Test.nodes(g);
-        while(g.edgeSize() < eSize) {
-            int a = WGraph_DS_Test.nextRnd(0,vSize);
-            int b = WGraph_DS_Test.nextRnd(0,vSize);
-            int i = nodes[a];
-            int j = nodes[b];
-            double w = WGraph_DS_Test.rnd.nextDouble();
-            g.connect(i,j, w);
+        for(int i=0; i<vSize-6; i++){
+            g.connect(i, i+1, i+1);
+            g.connect(i, i+2, i+2);
+            g.connect(i, i+3, i+3);
+            g.connect(i, i+4, i+4);
+            g.connect(i, i+5, i+5);
+            g.connect(i, i+6, i+6);
+            g.connect(i, i+7, i+7);
+            g.connect(i, i+8, i+8);
+            g.connect(i, i+9, i+9);
+            g.connect(i, i+10, i+10);
+
+
         }
+//
+//        int[] nodes = WGraph_DS_Test.nodes(g);
+//        while(g.edgeSize() < eSize) {
+//            int a = WGraph_DS_Test.nextRnd(0,vSize);
+//            int b = WGraph_DS_Test.nextRnd(0,vSize);
+//            int i = nodes[a];
+//            int j = nodes[b];
+//            double w = WGraph_DS_Test.rnd.nextDouble();
+//            g.connect(i,j, w);
+//        }
         return g;
     }
 
@@ -183,7 +198,7 @@ public class WGraph_Algo_Test {
 
         long endTime = System.currentTimeMillis();
 
-        long duration = (endTime - startTime);
-        System.out.println(duration);
+        double duration = (endTime - startTime)/1000.0;
+        System.out.println("Generating 10^6 nodes and 10^7 edges took: " + duration + "sec.");
     }
 }
