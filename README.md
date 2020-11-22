@@ -1,7 +1,8 @@
 ﻿
-**readMe for Ex1 at OOP-Course at Ariel university.**
+###**readMe for Ex1 at OOP-Course at Ariel university.**
 
-**WGraph_DS**
+##**WGraph_DS**
+
 this class implement's weighted_graph interface.
 It represent a weighted graph. 
 I used a hashmp that it keys are the nodes, and it values are another hashmap which it keys are the neighbors, and it values are the edge weight.<node, <neighbor,weight>>.
@@ -10,7 +11,8 @@ at this class there is an inner class NodeInfo which inplements node_info interf
 At this inner class we have method for nodes, s.e: remove/add neighbore, toString,..
 Note: The tag of each node is to save his path weigh from a given node. So NodeInfo comparTo, is to compare between the tag of the nodes.
 
-**WGraph_Algo**
+##**WGraph_Algo**
+
 this class implement's weighted_graph_algorithm interface.
 It represent a set of algorithm's on a weighted graph.
 
